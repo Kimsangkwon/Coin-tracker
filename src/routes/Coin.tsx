@@ -13,6 +13,18 @@ const Title = styled.h1`
   color: ${(props) => props.theme.accentColor};
 `;
 
+const Back = styled.div`
+display: inline;
+position: relative;
+top : 108px;
+left: 30px;
+&:hover{
+  a{
+      color: ${(props) => props.theme.accentColor};
+  }
+}
+`;
+
 const Loader = styled.span`
   text-align: center;
   display: block;
@@ -162,8 +174,17 @@ function Coin() {
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </title>
       </Helmet>
+      <Back>
+      <Link to={{
+        pathname: `/`,
+      }}
+      style={{fontSize: "30px"}}>
+        &larr;
+        </Link>
+      </Back>
       <Header>
       <Title>
+
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
       </Header>
